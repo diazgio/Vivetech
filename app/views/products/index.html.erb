@@ -1,0 +1,13 @@
+<section>
+  <div>
+    <h1>Productos medios geniales</h1>
+  </div>
+  <% @products.each do |p| %>
+    <div>
+      <span><%= p.name %></span>
+    </div>
+    <div>
+      <%= p.variants.first.name %>
+    </div>
+  <% end %>
+</section>
