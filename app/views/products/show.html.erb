@@ -1,4 +1,26 @@
 <h1>Aquí ira el show page</h1>
 <h4>Product name: </h4>
-<%= @product.name %>
+<div>
+  <div>
+    <p>Product name: </p>
+    <%= @product.name %>
+  </div>
+  <div>
+    <p>Product description: </p>
+    <%= @product.description%>
+  </div>
+  
+  <% @product.variants.map do |v| %>
+    <div>
+      <div>
+        <p>Variants name: </p>
+        <%= v.name %>
+      </div>
+      <div>
+        <p>Variants price: </p>
+        <%= v.price %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'Back', products_path %>
