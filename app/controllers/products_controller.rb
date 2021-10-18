@@ -8,16 +8,25 @@ class ProductsController < ApplicationController
   end
 
   def show
-    
   end
 
-  def create
+  def new
+    @product = Product.new
+  end
+  
 
+  def create
+    @product = Product.new(products_params)
+    if @product.save
+      redirect_to @product, notice: 'Product was successfully created.'
+    else
+      render :new
+    end
   end
 
   private
 
   def products_params
-
+    params.require(:product).permit(:name, :description, :variants)
   end
 end

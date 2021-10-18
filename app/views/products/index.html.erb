@@ -2,12 +2,18 @@
   <div>
     <h1>Productos medios geniales</h1>
   </div>
-  <% @products.each do |p| %>
-    <div>
-      <span><%= p.name %></span>
+  <% @products.each do |product, index| %>
+    <% index = 0 %>
+    <div class="d-flex ">
+      <div>
+        <span><%= product.name %></span>
+      </div>
+      <div>
+        <%= product.variants[index].name %>
+        <%= product.variants[index].price %>
+      </div>
+      <%= link_to "Read More", product %>
     </div>
-    <div>
-      <%= p.variants.first.name %>
-    </div>
+    <% index + 1 %>
   <% end %>
 </section>
