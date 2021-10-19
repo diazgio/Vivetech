@@ -23,6 +23,19 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= f.fields_for :variants, @product.variants.build do |variant| %>
+      <div>
+        <%= variant.label :name%>
+        <%= variant.text_field :name %>
+      </div>
+      <div>
+        <%= variant.label :price%>
+        <%= variant.text_field :price %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
