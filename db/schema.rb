@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_224349) do
   end
 
   create_table "variants", force: :cascade do |t|
-    t.string "name"
+    t.string "brand"
     t.float "price"
     t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false

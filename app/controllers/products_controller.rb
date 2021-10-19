@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.includes(:variants)
+    @products_available = Product.all.includes(:variants)
+    @products = Kaminari.paginate_array(@products_available).page(params[:page]).per(params[:per_page])
     respond_to do |format|
       format.json { render json: @products, each_serializer: ProductSerializer }
       format.html
@@ -56,6 +57,6 @@ class ProductsController < ApplicationController
   end
 
   def products_params
-    params.require(:product).permit(:name, :description, variants_attributes: [:name, :price])
+    params.require(:product).permit(:name, :description, variants_attributes: [:brand, :price, :id])
   end
 end

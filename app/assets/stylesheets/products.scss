@@ -1,1 +1,83 @@
+.main-container {
+  width: 60%;
+}
 
+.main-message {
+  margin: 4rem 0;
+  padding: 2rem;
+  background: rgba(201, 201, 201, 0.65);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
+  border-radius: 10px;
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #BD3B40;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+.product-card {
+  flex-direction: column;
+  width: 32%;
+  height: fit-content;
+  margin: 0.6rem;
+  background: rgba( 255, 239, 239, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 12.5px );
+  -webkit-backdrop-filter: blur( 12.5px );
+  border-radius: 10px;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.product-descrip {
+  align-items: center;
+  margin: 0.5rem 1rem;
+
+  h3 {
+    font-size: 1.7rem;
+    color: #0E5CA6;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #F18B2E;
+    word-break: break-word;
+  }
+}
+
+.pagination {
+  margin: 2rem auto;
+  height: 3rem;
+  text-align: center;
+  span {
+    font-size: 2rem;
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: #F18B2E;
+      }
+    }
+  }
+
+  .current {
+    text-align: center;
+    background-color: #0E5CA6;
+    color: white;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-radius: 3px;
+    margin: 0 0.4rem 0 0;
+  }
+
+  .page {
+
+  }
+}

@@ -1,19 +1,33 @@
-<section>
-  <div>
-    <h1>Productos medios geniales</h1>
+<%= render 'header' %>
+<section class="main-container">
+  <div class="main-message">
+    <h1>Vive tech Products TOP HOT SALES</h1>
+    <p>List of the best-selling products among our clients in America for different e-commerce.</p>
   </div>
-  <% @products.each do |product| %>
-    <% index = 0 %>
-    <div class="d-flex ">
-      <div>
-        <span><%= product.name %></span>
+  <div class="d-flex f-wrap w-100">
+    <% @products.each do |product| %>
+      <% index = 0 %>
+      <div class="d-flex product-card">
+        <div class="d-flex product-descrip">
+          <h3>Product type:&nbsp</h3>
+          <p><%= product.name %></p>
+        </div>
+        <div class="d-flex product-descrip">
+          <h3>Product description:&nbsp</h3>
+          <p><%= product.description %></p>
+        </div>
+        <div class="d-flex product-descrip">
+          <h3>Product Brand:&nbsp</h3>
+          <p><%= product.variants[index].brand %></p>
+        </div>
+        <div class="d-flex product-descrip">
+          <h3>Product price:&nbsp</h3>
+          <p><%= product.variants[index].price %></p>
+        </div>
+        <%= link_to "Read More", product, class: 'g-btn' %>
       </div>
-      <div>
-        <%= product.variants[index].name %>
-        <%= product.variants[index].price %>
-      </div>
-      <%= link_to "Read More", product %>
-    </div>
-    <% index + 1 %>
-  <% end %>
+      <% index + 1 %>
+    <% end %>
+  </div>
+  <%= paginate @products %>
 </section>

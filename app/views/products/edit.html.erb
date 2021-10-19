@@ -24,13 +24,13 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for :variants, @product.variants.build do |variant| %>
+    <%= f.fields_for :variants, @product.variants do |variant| %>
       <div>
         <%= variant.label :brand %>
         <%= variant.text_field :brand %>
       </div>
       <div>
-        <%= variant.label :price%>
+        <%= variant.label :price %>
         <%= variant.text_field :price %>
       </div>
     <% end %>
@@ -42,4 +42,5 @@
   
 <% end %>
 
+<%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
