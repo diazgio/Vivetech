@@ -25,7 +25,6 @@
 
 ## 🛠 Built With
 
-- React
 - Ruby on Railss
 - Heroku
 - Postgresql
