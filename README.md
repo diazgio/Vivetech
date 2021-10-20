@@ -2,7 +2,7 @@
 
 ## :scroll: Concept
 
-> Review app to give score and coments for restaurants, You can create an account and navigate through all the restaurants. The app it's build it with Reac for front-end and Rails for back-end. 
+> Nice web app to show top prodcuts for customers where you can create and edit the product and also there has a JSON presentation for requests in programs like POSTMAN. 
 
 > Index View
 
