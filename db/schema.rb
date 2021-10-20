@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2021_10_15_224349) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.string "country"
+    t.integer "year"
+    t.integer "stock"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_10_15_224349) do
   create_table "variants", force: :cascade do |t|
     t.string "brand"
     t.float "price"
+    t.string "supplier"
+    t.boolean "guarantee"
     t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

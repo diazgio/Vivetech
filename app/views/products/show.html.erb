@@ -1,28 +1,62 @@
 <%= render 'header' %>
-<h4>Product name: </h4>
-<div>
-  <div>
-    <p>Product name: </p>
-    <%= @product.name %>
+<section class="show-container">
+  <div class="main-message">
+    <h1>Product Specifications</h1>
+    <p>Individual product specifications, here you will find information such as year of manufacture, country of origin, stock, etc.</p> 
   </div>
-  <div>
-    <p>Product description: </p>
-    <%= @product.description%>
-  </div>
-  
-  <% @product.variants.each do |v| %>
-    <div>
-      <div>
-        <p>Variants name: </p>
-        <%= v.brand %>
-      </div>
-      <div>
-        <p>Variants price: </p>
-        <%= v.price %>
-      </div>
-    </div>
-  <% end %>
-</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <div>
+    <div>
+      <p>Product name: </p>
+      <%= @product.name %>
+    </div>
+
+    <div>
+      <p>Product description: </p>
+      <%= @product.description%>
+    </div>
+
+    <div>
+      <p>Product country: </p>
+      <%= @product.country%>
+    </div>
+
+    <div>
+      <p>Product year: </p>
+      <%= @product.year%>
+    </div>
+
+    <div>
+      <p>Product stock: </p>
+      <%= @product.stock%>
+    </div>
+    
+    <% @product.variants.each do |v| %>
+      <div>
+        <div>
+          <p>Variants name: </p>
+          <%= v.brand %>
+        </div>
+        <div>
+          <p>Variants price: </p>
+          <%= v.price %>
+        </div>
+        <div>
+          <p>Variants supplier: </p>
+          <%= v.supplier %>
+        </div>
+        <div>
+          <p>Variants guarantee: </p>
+          <% if v.guarantee %>
+            <p>This product has guarantee of 1 years!</p>
+          <% else %>
+            <p>This product hasn't guarantee!</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</section>
