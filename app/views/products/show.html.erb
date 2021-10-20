@@ -5,58 +5,65 @@
     <p>Individual product specifications, here you will find information such as year of manufacture, country of origin, stock, etc.</p> 
   </div>
 
-  <div>
-    <div>
-      <p>Product name: </p>
-      <%= @product.name %>
-    </div>
-
-    <div>
-      <p>Product description: </p>
-      <%= @product.description%>
-    </div>
-
-    <div>
-      <p>Product country: </p>
-      <%= @product.country%>
-    </div>
-
-    <div>
-      <p>Product year: </p>
-      <%= @product.year%>
-    </div>
-
-    <div>
-      <p>Product stock: </p>
-      <%= @product.stock%>
-    </div>
-    
-    <% @product.variants.each do |v| %>
-      <div>
-        <div>
-          <p>Variants name: </p>
-          <%= v.brand %>
-        </div>
-        <div>
-          <p>Variants price: </p>
-          <%= v.price %>
-        </div>
-        <div>
-          <p>Variants supplier: </p>
-          <%= v.supplier %>
-        </div>
-        <div>
-          <p>Variants guarantee: </p>
-          <% if v.guarantee %>
-            <p>This product has guarantee of 1 years!</p>
-          <% else %>
-            <p>This product hasn't guarantee!</p>
-          <% end %>
-        </div>
+  <div class="d-flex product-card-specific w-100">
+    <div class="w-50 pl-1">
+      <div class="d-flex product-descrip-s w-100">
+        <h3>Product name: </h3>
+        <p><%= @product.name %></p>
       </div>
-    <% end %>
-  </div>
 
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+      <div class="d-flex product-descrip-s w-100">
+        <h3>Product description: </h3>
+        <p><%= @product.description %></p>
+        
+      </div>
+
+      <div class="d-flex product-descrip-s w-100">
+        <h3>Product country: </h3>
+        <p><%= @product.country %></p>
+      </div>
+
+      <div class="d-flex product-descrip-s w-100">
+        <h3>Product year: </h3>
+        <p><%= @product.year %></p>
+      </div>
+
+      <div class="d-flex product-descrip-s w-100">
+        <h3>Product stock: </h3>
+        <p><%= @product.stock %></p>
+      </div>
+    </div>
+
+    <div class="w-50 pl-1">
+      <% @product.variants.each do |v| %>
+        <div>
+          <div class="d-flex product-descrip-s w-100">
+            <h3>Variants name: </h3>
+            <p><%= v.brand %></p>
+          </div>
+          <div class="d-flex product-descrip-s w-100">
+            <h3>Variants price: </h3>
+            <p><%= v.price %></p>
+          </div>
+          <div class="d-flex product-descrip-s w-100">
+            <h3>Variants supplier: </h3>
+            <p><%= v.supplier %></p>
+          </div>
+          <div class="d-flex product-descrip-s w-100">
+            <h3>Variants guarantee: </h3>
+            <% if v.guarantee %>
+              <p>This product has guarantee of 1 years!</p>
+            <% else %>
+              <p>This product hasn't guarantee!</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    
+  <div class="btns-container">
+    <%= link_to 'Edit', edit_product_path(@product), class: 'e-btn' %>
+    <%= link_to 'Back', products_path, class: 'g-btn' %>
+  </div>
 </section>

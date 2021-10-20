@@ -1,7 +1,7 @@
 <%= render 'header' %>
-
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
+<section class="edit-container">
+  <%= form_for(@product) do |f| %>
+    <% if @product.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@product.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -13,34 +13,70 @@
       </div>
     <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+    <div class="main-message">
+      <h1>Product Editing</h1>
+      <p>You can edit all the information for your product here!</p> 
+    </div>
 
-  <div class="field">
-    <%= f.fields_for :variants, @product.variants do |variant| %>
+    <div class="product-card-edit w-70">
       <div>
-        <%= variant.label :brand %>
-        <%= variant.text_field :brand %>
+        <div class="field d-flex edit-items">
+          <%= f.label :name, ('Name:') %><br>
+          <%= f.text_field :name %>
+        </div>
+        
+        <div class="field d-flex edit-items">
+          <%= f.label :description, ('Description:') %><br>
+          <%= f.text_area :description %>
+        </div>
+
+        <div class="field d-flex edit-items">
+          <%= f.label :country, ('Country:') %><br>
+          <%= f.text_field :country %>
+        </div>
+
+        <div class="field d-flex edit-items">
+          <%= f.label :year, ('Year:') %><br>
+          <%= f.text_field :year %>
+        </div>
+
+        <div class="field d-flex edit-items">
+          <%= f.label :stock, ('Stock:') %><br>
+          <%= f.text_field :stock %>
+        </div>
       </div>
+
       <div>
-        <%= variant.label :price %>
-        <%= variant.text_field :price %>
+        <%= f.fields_for :variants, @product.variants do |variant| %>
+          <div class="field d-flex edit-items">
+            <%= variant.label :brand, ('Brand:') %>
+            <%= variant.text_field :brand %>
+          </div>
+          <div class="field d-flex edit-items">
+            <%= variant.label :price, ('Price:') %>
+            <%= variant.text_field :price %>
+          </div>
+
+          <div class="field d-flex edit-items">
+            <%= variant.label :supplier, ('Supplier:') %>
+            <%= variant.text_field :supplier %>
+          </div>
+
+          <div class="field d-flex edit-items">
+            <%= variant.label :guarantee, ('Guarantee:') %>
+            <%= variant.select :guarantee, ['true', 'false']%>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  
-<% end %>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+  <div class="btns-container">
+    <%= link_to 'Show', @product, class: 'e-btn'%>
+    <%= link_to 'Back', products_path, class: 'g-btn' %>
+  </div>
+</section>

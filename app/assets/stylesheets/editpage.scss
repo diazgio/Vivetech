@@ -1,0 +1,57 @@
+.edit-container {
+  width: 60%;
+}
+
+.product-card-edit {
+  height: 48rem;
+  background: rgba( 255, 239, 239, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 12.5px );
+  -webkit-backdrop-filter: blur( 12.5px );
+  border-radius: 10px;
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+.edit-items {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  label {
+    margin: 0 1rem 0 0;
+    width: 10rem;
+    font-size: 1.7rem;
+    color: #0E5CA6;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    margin: 0;
+    padding: 0.5rem;
+    width: 30rem;
+  }
+
+  select {
+    margin: 0;
+    padding: 0.5rem;
+    width: 30rem;
+  }
+}
+
+.actions {
+  text-align: center;
+  margin-top: 2rem;
+  input {
+    background-color: #0E5CA6;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

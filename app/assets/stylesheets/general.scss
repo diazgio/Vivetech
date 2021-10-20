@@ -20,6 +20,18 @@ html {
   width: 100%;
 }
 
+.w-70 {
+  width: 70%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+
 .f-wrap {
   flex-wrap: wrap;
 }
@@ -33,4 +45,15 @@ html {
   border-radius: 6px;
   font-weight: bold;
   margin: 1rem auto;
+}
+
+.e-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: #1583A1;
+  color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: 1rem 1rem 1rem 0;
 }

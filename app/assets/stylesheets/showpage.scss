@@ -1,3 +1,36 @@
 .show-container {
   width: 60%;
 }
+
+.product-card-specific {
+  height: 28rem;
+  background: rgba( 255, 239, 239, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 12.5px );
+  -webkit-backdrop-filter: blur( 12.5px );
+  border-radius: 10px;
+  padding: 1rem 0;
+}
+
+.product-descrip-s {
+  align-items: center;
+  margin: 2.6rem 1rem;
+
+  h3 {
+    font-size: 1.7rem;
+    color: #0E5CA6;
+    margin-left: 0;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #F18B2E;
+    word-break: break-word;
+  }
+}
+
+.btns-container {
+  margin-top: 3rem;
+  text-align: center;
+}
